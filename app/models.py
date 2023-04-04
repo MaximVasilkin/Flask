@@ -43,8 +43,3 @@ class Advertisment(Base):
                 'description': self.description,
                 'created_at': str(self.created_at)}
         return info
-
-
-
-
-

@@ -2,50 +2,14 @@
 
 @baseUrl = http://localhost:5000
 
-# создание объявления
-POST {{baseUrl}}/advertisment
-Content-Type: application/json
-
-{
-  "owner_id": 9,
-  "title": "К0000000000",
-  "description": "Н1000000000000",
-  "created": "hit4fywysgti"
-}
-
-###
-
-# получение объявления
-GET {{baseUrl}}/advertisment/9
-Content-Type: application/json
-
-###
-
-# обновление объявления
-PATCH {{baseUrl}}/advertisment/9
-Content-Type: application/json
-
-{
-  "description": "НЕ !!!Самые сочные и ароматные помидорки",
-  "title": "ыыыыыыыы!"
-}
-
-###
-
-# удаление объявление
-DELETE {{baseUrl}}/advertisment/8
-Content-Type: application/json
-
-###
-
 # создание пользователя
 POST {{baseUrl}}/user
 Content-Type: application/json
 
 {
-  "name": "NotIvan",
-  "email": "iv11@nmail.ru",
-  "password": "123456"
+  "name": "Test",
+  "email": "test@mail.ru",
+  "password": "12345abc"
 }
 
 ###
@@ -61,15 +25,52 @@ PATCH {{baseUrl}}/user/1
 Content-Type: application/json
 
 {
-  "name": "egor",
-  "password": "12345Ac687",
-  "email": "eg1ddor@bk.ru"
+  "name": "Test",
+  "password": "aWx764!0"
 }
 
 ###
 
 # удаление пользователя
-DELETE {{baseUrl}}/user/3
+DELETE {{baseUrl}}/user/1
 Content-Type: application/json
+
+# создание объявления
+POST {{baseUrl}}/advertisment
+Content-Type: application/json
+email: test@mail.ru
+password: 12345abc
+
+{
+  "title": "Продам рассаду",
+  "description": "Только свежие саженцы"
+}
+
+###
+
+# получение объявления
+GET {{baseUrl}}/advertisment/1
+Content-Type: application/json
+
+###
+
+# обновление объявления
+PATCH {{baseUrl}}/advertisment/1
+Content-Type: application/json
+email: test@mail.ru
+password: 12345abc
+
+{
+  "description": "Только свежие саженцы, крупные плоды",
+  "title": "Продам рассаду (яблоки)"
+}
+
+###
+
+# удаление объявления
+DELETE {{baseUrl}}/advertisment/1
+Content-Type: application/json
+email: test@mail.ru
+password: 12345abc
 
 ###

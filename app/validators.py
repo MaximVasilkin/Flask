@@ -76,15 +76,8 @@ class AbcAdv(BaseModel):
 
 
 class PostAdv(AbcAdv, BaseModel):
-    owner_id: int
     title: str
     description: str
-
-    @validator('owner_id')
-    def validate_owner_id(cls, value):
-        if value < 1:
-            raise ValueError('Owner id should be positive')
-        return value
 
 
 class PatchAdv(AbcAdv, BaseModel):
