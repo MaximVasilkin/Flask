@@ -1,9 +1,15 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from app.models import Advertisment, User, Base
+from models import Advertisment, User, Base
+from os import getenv
 
 
-DSN = 'postgresql://postgres:pstpwd@localhost:5432/flask_db'
+DB_NAME = getenv('POSTGRES_DB')
+DB_USER = getenv('POSTGRES_USER')
+DB_PASSWORD = getenv('POSTGRES_PASSWORD')
+
+
+DSN = f'postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@postgresql_db:5432/{DB_NAME}'
 ENGINE = create_engine(DSN)
 SESSION = sessionmaker(bind=ENGINE)
 

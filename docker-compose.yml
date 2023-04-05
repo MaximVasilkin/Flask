@@ -1,7 +1,7 @@
 version: '3.9'
 
 volumes:
-  pgdata:
+  pg_data:
 
 networks:
   backend:
@@ -9,26 +9,20 @@ networks:
 services:
   website:
     build: .
+    ports:
+      - '5000:5000'
     env_file:
-      - smhenvsmh
+      - env
     depends_on:
-      - postgresql
+      - postgresql_db
     networks:
       - backend
-    ports:
-      - '5000':'5000'
 
-  postgresql:
+  postgresql_db:
     image: 'postgres:12'
     env_file:
-      - smhenvsmh
+      - env
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
     networks:
       - backend
-
-
-
-
-
-

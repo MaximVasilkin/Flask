@@ -1,3 +1,3 @@
 POSTGRES_DB: 'flask_db'
 POSTGRES_USER: 'postgres'
-POSTGRES_PASSWORD: 'postgresPASS372!'
+POSTGRES_PASSWORD: 'postgresPASS372'

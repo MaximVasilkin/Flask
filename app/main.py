@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request
 from flask.views import MethodView
 from pydantic import ValidationError
-from app.app_errors import HttpError, IntegrityError
-from app.response_statuses import Status
+from app_errors import HttpError, IntegrityError
+from response_statuses import Status
 from models import User, Advertisment
 from validators import PostAdv, PatchAdv, PostUser, PatchUser
 from work_with_db import db
@@ -174,4 +174,4 @@ app.add_url_rule('/advertisment/<int:adv_id>',
 # Start project
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='127.0.0.1', port=5000)
