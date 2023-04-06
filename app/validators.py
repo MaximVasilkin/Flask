@@ -40,9 +40,7 @@ class AbcUser(BaseModel):
 
 
 class PostUser(AbcUser, BaseModel):
-    name: str
     email: str
-    password: str
 
     @validator('email')
     def validate_email(cls, value):
@@ -76,8 +74,7 @@ class AbcAdv(BaseModel):
 
 
 class PostAdv(AbcAdv, BaseModel):
-    title: str
-    description: str
+    pass
 
 
 class PatchAdv(AbcAdv, BaseModel):
